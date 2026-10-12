@@ -1,0 +1,5 @@
+ff41091e2411f21c3e0329e0c4738f25c06d6b9397662687afc049d6e567aa53  upstream/0001-ALSA-hda-cs8409-Forget-the-cached-I2C-device-address.patch
+213ff2ce994cf60d6bd25901eee2cc3cc9caf9592ca655b7f4f1fc19f1e3c0ce  upstream/0002-ALSA-hda-cs8409-Handle-a-tip-sense-with-a-rise-debou.patch
+3e230562ee677d9bf806276c09f9c33f637aed186eef659b9d8399ed7c0ac2f5  upstream/0003-ALSA-hda-cs8409-Add-support-for-Apple-MacBookPro13-1.patch
+ecc88e462517a6cd53cdc54de5002cd7092ee296d383fccca70af5171fe1fa5b  0004-ubuntu-7.0-gpio-compat.patch
+a837063be462bcdd9d0343053cf66ecd52a2599f343b26fff22d1261248d9e62  reference/ubuntu-7.0-compat.patch

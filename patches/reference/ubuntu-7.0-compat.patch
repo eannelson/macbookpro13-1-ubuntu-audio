@@ -1,0 +1,20 @@
+--- linux-source-7.0.0/sound/hda/codecs/cirrus/cs8409.c	2026-10-11 14:41:24.671093722 -0400
++++ cs8409-ubuntu-build/hda/codecs/cirrus/cs8409.c	2026-10-11 16:28:04.132405699 -0400
+@@ -2242,10 +2242,14 @@
+ 	 */
+ 	spec->gpio_data &= ~cs42l83->reset_gpio;
+ 
+-	if (spec->gpio_mask)
+-		snd_hda_codec_set_gpio(codec, spec->gpio_mask, spec->gpio_dir,
+-				       spec->gpio_data, 0);
++        if (spec->gpio_mask) {
++          snd_hda_codec_write(codec, codec->core.afg, 0, AC_VERB_SET_GPIO_MASK, spec->gpio_mask);
+ 
++          snd_hda_codec_write(codec, codec->core.afg, 0, AC_VERB_SET_GPIO_DIRECTION, spec->gpio_dir);
++
++          snd_hda_codec_write(codec, codec->core.afg, 0, AC_VERB_SET_GPIO_DATA, spec->gpio_data);
++        }
++        
+ 	/*
+ 	 * Every slot off first: after a power loss they are not. The last
+ 	 * register, ASP2_H_RX_CTRL2, is left out as AppleHDA leaves it out.

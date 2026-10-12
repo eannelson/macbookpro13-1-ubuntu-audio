@@ -1,0 +1,4 @@
+upstream/0001-ALSA-hda-cs8409-Forget-the-cached-I2C-device-address.patch
+upstream/0002-ALSA-hda-cs8409-Handle-a-tip-sense-with-a-rise-debou.patch
+upstream/0003-ALSA-hda-cs8409-Add-support-for-Apple-MacBookPro13-1.patch
+0004-ubuntu-7.0-gpio-compat.patch

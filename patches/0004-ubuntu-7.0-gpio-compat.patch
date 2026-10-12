@@ -1,0 +1,27 @@
+Subject: Ubuntu 7.0: replace unavailable GPIO helper with HDA verbs
+
+Local compatibility adjustment from the tested Ubuntu port.
+Original reference preserved in patches/reference/ubuntu-7.0-compat.patch.
+Only file headers are normalized; the tested diff body is unchanged.
+No upstream commit identity or Signed-off-by is claimed for this patch.
+
+--- a/sound/hda/codecs/cirrus/cs8409.c
++++ b/sound/hda/codecs/cirrus/cs8409.c
+@@ -2242,10 +2242,14 @@
+ 	 */
+ 	spec->gpio_data &= ~cs42l83->reset_gpio;
+ 
+-	if (spec->gpio_mask)
+-		snd_hda_codec_set_gpio(codec, spec->gpio_mask, spec->gpio_dir,
+-				       spec->gpio_data, 0);
++        if (spec->gpio_mask) {
++          snd_hda_codec_write(codec, codec->core.afg, 0, AC_VERB_SET_GPIO_MASK, spec->gpio_mask);
+ 
++          snd_hda_codec_write(codec, codec->core.afg, 0, AC_VERB_SET_GPIO_DIRECTION, spec->gpio_dir);
++
++          snd_hda_codec_write(codec, codec->core.afg, 0, AC_VERB_SET_GPIO_DATA, spec->gpio_data);
++        }
++        
+ 	/*
+ 	 * Every slot off first: after a power loss they are not. The last
+ 	 * register, ASP2_H_RX_CTRL2, is left out as AppleHDA leaves it out.

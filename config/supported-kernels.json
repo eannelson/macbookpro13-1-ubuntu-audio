@@ -1,0 +1,9 @@
+{
+  "7.0.0-38-generic": {
+    "source_package": "linux-source-7.0.0",
+    "source_version": "7.0.0-38.38",
+    "source_archive": "linux-source-7.0.0.tar.bz2",
+    "architecture": "amd64",
+    "source_archive_sha256": "1610ed026817da29c6be30c2d9c639287ea472d5b805a1f23e2d576be6be6222"
+  }
+}
